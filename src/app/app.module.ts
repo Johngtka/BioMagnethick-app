@@ -63,7 +63,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, './assets/i18n/');
 }
 export function storeCollection(storeService: StoreService) {
-    storeService.fetchStore();
+    return () => storeService.fetchStore(); // Dodajemy funkcję zwracającą Promise lub void
 }
 const navigatorLang = navigator.language.split('-')[0];
 const supportedLang = ['pl', 'es', 'en'];
@@ -145,6 +145,7 @@ const materialModules = [
             provide: APP_INITIALIZER,
             useFactory: storeCollection,
             deps: [StoreService],
+            multi: true,
         },
     ],
     bootstrap: [AppComponent],

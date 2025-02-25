@@ -1,5 +1,5 @@
 <div class="col-md-4">
-    <h3>{{ viewDate | calendarDate : view + 'ViewTitle' : locale }}</h3>
+    <h3>{{ viewDate | calendarDate: view + 'ViewTitle' : locale }}</h3>
 </div>
 <div *ngIf="events$ | async; else loading; let events">
     <mwl-calendar-month-view

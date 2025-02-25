@@ -42,7 +42,7 @@
                 {{ 'VISITS_HISTORY_TABLE.DATE' | translate }}
             </th>
             <td mat-cell *matCellDef="let element">
-                {{ element.createdAt | date : 'dd.MM.yyyy' }}
+                {{ element.createdAt | date: 'dd.MM.yyyy' }}
             </td>
         </ng-container>
         <ng-container matColumnDef="points">
@@ -59,7 +59,7 @@
                             : 'green'
                     }"
                 >
-                    {{ i + 1 + ')' }} &nbsp; {{ point.id | pointNames : store }}
+                    {{ i + 1 + ')' }} &nbsp; {{ point.id | pointNames: store }}
                 </div>
             </td>
         </ng-container>
@@ -125,7 +125,7 @@
                                         : '2px solid green'
                                 }"
                                 class="bodyPoints"
-                                src="{{ point.id | pointImage : store }}"
+                                src="{{ point.id | pointImage: store }}"
                             />
                         </span>
                     </div>
